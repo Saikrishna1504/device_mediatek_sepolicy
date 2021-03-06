@@ -667,3 +667,6 @@ type ctl_mbimd_prop, property_type;
 #=============allow system update to set prop=============
 type update_finished_prop, property_type, mtk_core_property_type;
 type update_started_prop, property_type, mtk_core_property_type;
+
+# Wi-Fi
+type wlan_fw_prop, property_type;
