@@ -1,0 +1,23 @@
+# GPU HIDL
+attribute hal_gpu;
+attribute hal_gpu_client;
+attribute hal_gpu_server;
+
+# LBS HIDL
+attribute mtk_hal_lbs;
+attribute mtk_hal_lbs_client;
+attribute mtk_hal_lbs_server;
+
+# modem db filter hidl
+attribute mtk_hal_md_dbfilter;
+attribute mtk_hal_md_dbfilter_client;
+
+# DMC HIDL
+attribute mtk_hal_dmc;
+attribute mtk_hal_dmc_client;
+attribute mtk_hal_dmc_server;
+
+# APM HIDL
+attribute mtk_hal_apm;
+attribute mtk_hal_apm_client;
+attribute mtk_hal_apm_server;
