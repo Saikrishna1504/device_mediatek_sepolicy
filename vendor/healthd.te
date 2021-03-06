@@ -1,0 +1,17 @@
+hal_client_domain(healthd, hal_light);
+
+allow healthd charger_exec:file { r_file_perms execute map entrypoint };
+allow healthd device:dir { open read };
+allow healthd hal_light_default:binder call;
+allow healthd hal_light_hwservice:hwservice_manager find;
+allow healthd proc_meminfo:file { open read };
+allow healthd sysfs_battery_supply:file rw_file_perms;
+allow healthd sysfs_leds:dir search;
+allow healthd sysfs_usb_supply:file { getattr open read };
+
+# TODO:: MTK need to remove later
+not_full_treble(`
+    allow healthd mtkrild:unix_stream_socket connectto;
+')
+
+allow healthd sysfs_vcorefs_pwrctrl:file write;

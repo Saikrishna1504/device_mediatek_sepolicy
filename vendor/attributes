@@ -1,0 +1,145 @@
+# Attribute that represents all mtk property types (except those with ctl_xxx prefix)
+attribute mtk_core_property_type;
+
+# IMSA HIDL
+attribute hal_imsa;
+attribute hal_imsa_client;
+attribute hal_imsa_server;
+
+# attribute that represents all MTK IMS types. It should be used by AP side module only.
+attribute mtkimsapdomain;
+#
+# # attribute that represents all MTK IMS types. It should be used by MD side module only.
+attribute mtkimsmddomain;
+
+# PQ HIDL
+attribute hal_pq;
+attribute hal_pq_client;
+attribute hal_pq_server;
+
+# KEY ATTESTATION HIDL
+attribute mtk_hal_keyattestation;
+attribute mtk_hal_keyattestation_client;
+attribute mtk_hal_keyattestation_server;
+
+# NVRAM AGENT HIDL
+attribute hal_nvramagent;
+attribute hal_nvramagent_client;
+attribute hal_nvramagent_server;
+
+# FM HIDL
+attribute mtk_hal_fm;
+attribute mtk_hal_fm_client;
+attribute mtk_hal_fm_server;
+
+# log hidl
+attribute mtk_hal_log;
+attribute mtk_hal_log_client;
+attribute mtk_hal_log_server;
+
+# em hidl
+attribute mtk_hal_em;
+attribute mtk_hal_em_client;
+attribute mtk_hal_em_server;
+
+# MDP HIDL
+attribute hal_mms;
+attribute hal_mms_client;
+attribute hal_mms_server;
+
+attribute hal_mtkcodecservice_server;
+attribute hal_mtkcodecservice;
+
+attribute hal_atci;
+attribute hal_atci_client;
+attribute hal_atci_server;
+
+# modem db filter hidl
+attribute mtk_hal_md_dbfilter_server;
+
+# HDMI HIDL
+attribute hal_hdmi;
+attribute hal_hdmi_client;
+attribute hal_hdmi_server;
+
+# BGService HIDL
+attribute mtk_hal_bgs;
+attribute mtk_hal_bgs_client;
+attribute mtk_hal_bgs_server;
+
+attribute hal_wfo;
+attribute hal_wfo_client;
+attribute hal_wfo_server;
+attribute mtk_hal_netdagent;
+attribute mtk_hal_netdagent_client;
+attribute mtk_hal_netdagent_server;
+attribute hal_presence;
+attribute hal_presence_client;
+attribute hal_presence_server;
+attribute hal_videotelephony;
+attribute hal_videotelephony_client;
+attribute hal_videotelephony_server;
+
+attribute hal_mtkcodecservice_client;
+
+attribute hal_rcs;
+attribute hal_rcs_client;
+attribute hal_rcs_server;
+attribute hal_dfps;
+attribute hal_dfps_client;
+attribute hal_dfps_server;
+attribute hal_dplanner;
+attribute hal_dplanner_client;
+attribute hal_dplanner_server;
+attribute mtk_hal_pplagent;
+attribute mtk_hal_pplagent_client;
+attribute mtk_hal_pplagent_server;
+attribute hal_clientapi;
+attribute hal_clientapi_client;
+attribute hal_clientapi_server;
+
+# ==============================================
+# MICROTRUST Attribute declarations
+# ==============================================
+# THH ATTESTATION HIDL
+attribute hal_thh;
+attribute hal_thh_client;
+attribute hal_thh_server;
+
+# TUI ATTESTATION HIDL
+attribute hal_tui;
+attribute hal_tui_client;
+attribute hal_tui_server;
+
+# CLIENT API ATTESTATION HIDL
+attribute hal_capi;
+attribute hal_capi_client;
+attribute hal_capi_server;
+
+# ==============================================
+# Trustonic Attribute declarations
+# ==============================================
+attribute hal_tee_client;
+attribute hal_tee_server;
+attribute hal_tee;
+attribute hal_teeregistry_client;
+attribute hal_teeregistry_server;
+attribute hal_teeregistry;
+
+# ==============================================
+# MDM HIDL
+# ==============================================
+attribute md_monitor_hal_client;
+attribute md_monitor_hal_server;
+attribute md_monitor_hal;
+
+
+# OMADM HIDL
+attribute hal_omadm;
+attribute hal_omadm_client;
+attribute hal_omadm_server;
+
+# touch HIDL
+attribute hal_nwk_opt;
+attribute hal_nwk_opt_client;
+attribute hal_nwk_opt_server;

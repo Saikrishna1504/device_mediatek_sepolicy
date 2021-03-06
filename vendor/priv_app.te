@@ -1,0 +1,55 @@
+# Purpose: Allow app GPU library to use MDP HIDL
+hal_client_domain(priv_app, hal_mms)
+
+allow priv_app mtk_cmdq_device:chr_file rw_file_perms;
+allow priv_app mtk_mdp_device:chr_file rw_file_perms;
+allow priv_app proc_interrupts:file { open };
+allow priv_app proc_modules:file { open };
+allow priv_app sysfs_android_usb:file { open };
+allow priv_app sysfs_therm:file r_file_perms;
+allow priv_app sysfs_boot_mode:file r_file_perms;
+allow priv_app vpu_device:chr_file rw_file_perms;
+allow priv_app sysfs_net:file r_file_perms;
+allow priv_app adb_data_file:dir r_dir_perms;
+allow priv_app adb_data_file:file rx_file_perms;
+
+get_prop(priv_app, exported_default_prop)
+get_prop(priv_app, vendor_default_prop)
+get_prop(priv_app, render_prop)
+get_prop(priv_app, apexd_prop)
+get_prop(priv_app, atci_sys_prop)
+get_prop(priv_app, atm_ipaddr_prop)
+get_prop(priv_app, atm_mdmode_prop)
+
+# Purpose: Allow to use mtk telephony APIs (phoneEx)
+allow priv_app mtk_radio_service:service_manager find;
+
+# Purpose: Allow to use HAL PQ
+hal_client_domain(priv_app, hal_pq)
+
+# Purpose: Allow to use shared memory for HAL PQ
+hal_client_domain(priv_app, hal_allocator)
+
+# Purpose :allow priv_app to search debugfs_ion dir
+allow priv_app debugfs_ion:dir search;
+
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow priv_app program_binary_service:service_manager find;
+
+# Purpose: Add permission to access files on SD card when sdcrdfs is enabled.
+allow priv_app sdcard_type:dir create_dir_perms;
+allow priv_app sdcard_type:file create_file_perms;
+
+# Purpose : Add permission for gpu access
+allow priv_app dri_device:chr_file write;
+
+# Purpose :
+# avc: denied { write } for name="aee_interim" dev="dm-0" ino=8236
+# scontext=u:r:priv_app:s0:c512,c768 tcontext=u:object_r:coredump_file:s0
+# tclass=dir permissive=0
+userdebug_or_eng(`
+  allow priv_app coredump_file:dir { write };
+')
+
+# Purpose: Allow to use mtk telephony APIs (phoneEx)
+allow priv_app mtk_radio_service:service_manager find;

@@ -1,0 +1,41 @@
+# Purpose : bt hal interface permission
+binder_call(bluetooth, mtk_hal_bluetooth)
+
+allow bluetooth storage_stub_file:dir getattr;
+
+set_prop(bluetooth, vendor_bluetooth_prop)
+set_prop(bluetooth, debug_prop)
+
+# Add dir create perms for bluetooth on /data/misc/bluetooth/logs
+allow bluetooth bluetooth_logs_data_file:dir { create_dir_perms relabelto };
+allow bluetooth bluetooth_logs_data_file:fifo_file { create_file_perms };
+
+# Operation : Migration
+get_prop(bluetooth, mtk_amslog_prop)
+get_prop(bluetooth, vendor_bt_prop)
+
+allow bluetooth hal_btconfigstore_hwservice:hwservice_manager { add find };
+
+# Device access
+allow bluetooth stpbt_device:chr_file rw_file_perms;
+
+# NVRAM access
+#============= bluetooth ==============
+allow bluetooth nvram_data_file:dir search;
+allow bluetooth nvram_data_file:file rw_file_perms;
+allow bluetooth nvram_data_file:lnk_file read;
+allow bluetooth nvdata_file:lnk_file read;
+allow bluetooth nvdata_file:dir search;
+allow bluetooth nvdata_file:file { read write getattr open };
+
+allow bluetooth block_device:dir search;
+allow bluetooth proc_secmem:file { read open };
+
+# Purpose: Allow bluetooth to access surfaceflinger
+allow bluetooth surfaceflinger:fifo_file { read write };
+
+# Purpose: Allow bluetooth to get/set mtk_bluetooth_prop
+set_prop(bluetooth, mtk_bluetooth_prop)
+
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow bluetooth program_binary_service:service_manager find;

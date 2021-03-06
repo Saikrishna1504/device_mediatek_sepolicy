@@ -1,0 +1,374 @@
+# Purpose : allow to access kpd driver file
+allow radio sysfs_keypad_file:dir { r_dir_perms };
+allow radio sysfs_keypad_file:file { w_file_perms };
+
+# Purpose : for engineermode WFD IOT property
+allow radio surfaceflinger:fifo_file { rw_file_perms };
+
+# Purpose : for engineermode Usb PHY Tuning
+allow radio debugfs_usb20_phy:file { read open getattr };
+allow radio debugfs_usb20_phy:dir search;
+
+# Purpose : for engineermode
+allow radio mt_otg_test_device:chr_file { read write ioctl open };
+allow radio mtgpio_device:chr_file { read ioctl open };
+allow radio stpbt_device:chr_file { read write open };
+allow radio stpant_device:chr_file { read write open };
+allow radio bt_int_adp_socket:sock_file write;
+allow radio mt6605_device:chr_file { read write ioctl open getattr };
+allow radio nfc_socket:dir { write add_name remove_name search };
+allow radio system_prop:property_service set;
+
+# Purpose : for engineermode
+allow radio em_svr:unix_stream_socket connectto;
+
+# Purpose : for engineermode WiFi test mode
+# todo: in the feature Google maybe forbid this option,we should use other way
+allowxperm radio self:udp_socket ioctl { SIOCIWFIRSTPRIV-SIOCIWFIRSTPRIV_09 SIOCIWFIRSTPRIV_0B SIOCSIWESSID SIOCSIWMODE };
+
+# Purpose : for bluetooth relayer mode
+allow radio block_device:dir search;
+allow radio ttyGS_device:chr_file { open read write ioctl };
+
+# Purpose :
+#   Write IMEI - presanity item write imei should read the file on storage
+#   Swift APK integration - access TTL scripts and logs on external storage
+#   eng mode camera - save iamges files and log files on external storage
+#   eng mode ygps - save location information on external storage
+allow radio media_rw_data_file:dir { create_dir_perms };
+allow radio media_rw_data_file:file { create_file_perms };
+
+# Purpose :
+#   Swift APK integration - access ccci dir/file
+allow radio ccci_fsd:dir { r_dir_perms };
+
+# Purpose : for Bluetooth read NVRAM data
+allow radio nvdata_file:dir search;
+allow radio nvdata_file:file rw_file_perms;
+
+# Purpose: for EM set persist.net.auto.tethering
+set_prop(radio, mtk_em_net_auto_tethering_prop)
+
+# Purpose : HIDL for rilproxy
+binder_call(radio, hal_telephony)
+
+# Purpose : for YGPS execution
+allow radio hal_graphics_composer_default:fd use;
+
+# Purpose: allow get telephony Sensitive property
+get_prop(radio, mtk_telephony_sensitive_prop)
+
+# Purpose : HIDL for imsa
+binder_call(radio, mtk_hal_imsa)
+
+# Purpose : Allow to use HAL imsa
+hal_client_domain(radio, hal_imsa)
+
+# Purpose: For audio parameter tuning
+binder_call(radio,mtk_hal_audio)
+
+# TODO : Will move to plat_private when SEPolicy split done
+# Purpose : Allow EM set usb property
+set_prop(radio, system_radio_prop)
+
+# Purpose: NFC EM
+allow radio hal_nfc_hwservice:hwservice_manager find;
+binder_call(radio, hal_nfc)
+binder_call(hal_nfc, radio)
+hwbinder_use(radio);
+typeattribute radio halclientdomain;
+typeattribute radio hal_nfc_client;
+allow radio nfc_socket:sock_file { create write unlink setattr };
+set_prop(radio, system_prop)
+
+# Purpose : Allow EM use power HAL
+allow radio mtk_hal_power_hwservice:hwservice_manager find;
+binder_call(radio, mtk_hal_power)
+
+# Purpose: Policy for EM to set wcn coredump property
+get_prop(radio, wmt_prop)
+
+# Purpose: Allow radio to get tel_switch_prop
+get_prop(radio, tel_switch_prop)
+
+# Purpose: allow EM to set modem reset delay property
+get_prop(radio, mtk_debug_md_reset_prop)
+
+# Purpose : For EM access battery info
+allow radio sysfs_battery_supply:dir search;
+allow radio sysfs_vbus:file { read getattr open };
+allow radio sysfs_battery_consumption:file r_file_perms;
+allow radio sysfs_power_on_vol:file r_file_perms;
+allow radio sysfs_power_off_vol:file r_file_perms;
+allow radio sysfs_fg_disable:file w_file_perms;
+allow radio sysfs_dis_nafg:file w_file_perms;
+
+# Purpose : Allow EM access touchscreen settings
+allow radio sysfs_tpd_debug:dir { search read open };
+allow radio sysfs_tpd_setting:dir { search read open };
+
+# Purpose : mtk EM PMU reading/setting
+allow radio sysfs_pmu:dir { search };
+allow radio sysfs_pmu:file { read };
+allow radio sysfs_pmu:lnk_file { read };
+
+# Purpose : mtk EM Power debug_log setting
+allow radio sysfs_spm:dir { search };
+
+# Purpose: Allow EM detect Audio headset status
+allow radio sysfs_headset:file { read open };
+
+# Purpose : Allow to use HAL em
+hal_client_domain(radio, mtk_hal_em)
+
+# Purpose : Allow sim system to set prop
+set_prop(radio, vendor_sim_system_prop)
+
+# Purpose : Allow Mwi to get vendor default properties (ro.vendor.*)
+get_prop(radio, vendor_default_prop)
+
+# Purpose : Allow to use mtk_bgdata_disabled
+set_prop(radio, mtk_bgdata_disabled)
+
+# Purpose : Allow to use mtk_telecom_vibrate
+set_prop(radio, mtk_telecom_vibrate)
+
+# Purpose : Allow to use mtk_gprs_attach_type
+set_prop(radio, mtk_gprs_attach_type)
+
+# Purpose : Allow EM to use Lbs Hidl
+binder_call(radio, lbs_hidl_service)
+allow radio mtk_hal_lbs_hwservice:hwservice_manager find;
+
+# Purpose : Allow EM to set poweroffmd property
+set_prop(radio, mtk_power_off_md_type)
+
+get_prop(radio, persist_mtk_aeev_prop);
+
+# Purpose : Allow EM to set sys property
+set_prop(radio, mtk_em_sys_prop)
+
+# Purpose : mtk EM c2k bypass read usb file
+allow radio sys_usb_rawbulk:file { r_file_perms };
+allow radio sys_usb_rawbulk:dir { r_dir_perms };
+
+# Purpose : for set telephony xcap use raw url property in IMS SS
+set_prop(radio, persist_xcap_rawurl_prop)
+
+# Purpose : Engineering mode need access for aee commmand
+allow radio aee_aed:unix_stream_socket connectto;
+
+# Purpose : Engineering mode need get subpimic register status
+allow radio debugfs_regmap:dir { search };
+
+# Purpose : Allow get USB Current Speed in Engineer Mode
+get_prop(radio, vendor_usb_prop);
+
+allow radio gpuservice:binder call;
+allow radio system_app_data_file:dir getattr;
+allow radio debugfs_ion:dir search;
+allow radio adb_data_file:file r_file_perms;
+
+get_prop(radio, telephony_prop)
+
+# Operation : Migration for SWO policy package survey
+allow radio rild_mal_socket:sock_file write;
+allow radio rild_mal_at_socket:sock_file write;
+allow radio rild_mal_md2_socket:sock_file write;
+allow radio rild_mal_at_md2_socket:sock_file write;
+
+# Purpose : for engineermode
+# allow radio guiext-server:binder { transfer call };
+
+allow radio mtk_registry_service:service_manager add;
+
+# Fix boot violation
+add_service(radio, mtk_radio_service)
+
+# Purpose: for iphonesubinfoEx service
+add_service(radio, mtk_phonesubinfo_service)
+
+# Purpose: for world phone get modem type
+get_prop(radio, ril_active_md_prop)
+
+# Purpose: for mtksimphonebook service
+add_service(radio, mtk_simphonebook_service)
+
+# Purpose : Allow to use HAL Wfo
+hal_client_domain(radio, hal_wfo)
+
+# Purpose : for setting volte enable property
+get_prop(radio, mtk_volte_prop)
+
+# Purpose : for setting wfc enable property
+get_prop(radio, mtk_wfc_prop)
+
+# Purpose : for setting vilte enable property after 93 modem
+get_prop(radio, mtk_vilte_prop)
+
+# Purpose : for setting viwifi enable property
+get_prop(radio, mtk_viwifi_prop)
+
+# Purpose : for setting vt enable property
+get_prop(radio, mtk_vt_prop)
+
+# Purpose : Add vtservice to support video telephony functionality
+#           3G VT/ViLTE both use this service which will also communication with IMCB/Rild
+allow radio vtservice:binder call;
+allow radio vtservice:binder transfer;
+allow radio vtservice_service:service_manager find;
+
+# Purpose : for setting ims config force notify property
+set_prop(radio, vendor_imsconfig_prop)
+
+# Purpose: Allow EM to get CXP feature option property
+get_prop(radio, mtk_cxp_vendor_prop)
+
+# Purpose : Allow EM use mtk_hal_netdagent_hwservice
+hal_client_domain(radio,mtk_hal_netdagent)
+
+# Purpose : Engineering mode need to get NFC Service
+allow radio nfc_service:service_manager find;
+
+# Purpose : STMicro NFC integration for Engineering mode
+allow radio st21nfc_device:chr_file { read write getattr ioctl open };
+set_prop(radio,hwservicemanager_prop);
+
+# Purpose : for engineermode WFD IOT property
+set_prop(radio,media_wfd_prop);
+
+# Purpose : Allow to use HAL rcs
+hal_client_domain(radio, hal_rcs);
+
+# Purpose: Allow radio to get mtk_vsim_prop
+get_prop(radio, mtk_vsim_prop)
+get_prop(radio, mtk_vsim_sys_prop)
+set_prop(radio, mtk_vsim_sys_prop)
+set_prop(radio, ctl_start_prop)
+set_prop(radio, ctl_stop_prop)
+
+# Purpose: Allow em to get/set vendor_ims_xcap_prop
+set_prop(radio, vendor_ims_xcap_prop)
+
+# Purpose : for engineermode telephony log settings
+get_prop(radio, logmuch_prop)
+get_prop(radio, mtk_log_tel_dbg_prop)
+set_prop(radio, mtk_em_tel_log_prop)
+set_prop(radio, log_tag_prop)
+
+# Operation: P migration
+get_prop(radio, mtk_ims_prop)
+
+# Purpose: for SWIFT connecting to ATCI
+hal_client_domain(radio, hal_atci)
+
+# Purpose: P SQC, for SMS framework access PplAgent HIDL interface
+allow radio mtk_hal_pplagent_hwservice:hwservice_manager find;
+allow radio ppl_agent:binder call;
+
+# Purpose : for SelfRegister to call nvram hal
+allow radio nvram_agent_binder:binder call;
+allow radio nvram_agent_binder_hwservice:hwservice_manager find;
+
+# Purpose : Allow em to set mtk_selfreg_prop
+set_prop(radio, mtk_selfreg_prop)
+
+# Purpose: Support configure check tool
+#allow radio atci_service_exec:file getattr;
+#allow radio atcid_exec:file getattr;
+
+# Purpose : Allow ctm to set mtk_ctmslot_prop
+set_prop(radio, mtk_ctmslot_prop)
+
+# Purpose : Allow radio to set vendor prop in core domain
+set_prop(radio, vendor_cdma_prop)
+
+# Purpose : Allow Phone process to set ECBM property
+set_prop(radio, mtk_cdma_ecm_prop);
+
+# Purpose : Allow radio to get/set vendor_supp_serv_prop
+set_prop(radio, vendor_supp_serv_prop)
+
+# Purpose : Allow framework to set mtk_common_data_prop
+set_prop(radio, mtk_common_data_prop)
+
+# Purpose : allow radio set world phohe property
+set_prop(radio, mtk_world_phone_prop)
+
+# Date: 2018/07/03
+# Operation: P migration
+# Purpose : allow radio set capability switch property
+set_prop(radio, mtk_capability_switch_prop)
+
+# Purpose : allow radio get vzw device type property
+get_prop(radio, persist_vendor_vzw_device_type)
+
+# Purpose: allow radio to get RTT property
+get_prop(radio, mtk_rtt_prop)
+
+# Purpose : Allow Entitlement to get mtk_wfc_entitlement_prop
+# Package: com.mediatek.entitlement
+get_prop(radio, mtk_wfc_entitlement_prop)
+set_prop(radio, mtk_wfc_entitlement_prop)
+
+# Operation: Support UCE Property
+get_prop(radio, mtk_uce_support_prop)
+set_prop(radio, mtk_uce_support_prop)
+
+# Operation: Support SubsidyLock
+get_prop(radio, mtk_subsidylock_prop)
+set_prop(radio, mtk_subsidylock_prop_connect)
+
+# Operation: Support GWSD
+add_service(radio, mtk_gwsd_service)
+
+# Purpose : Allow to use PQ in Engineer Mode
+hal_client_domain(radio, hal_pq)
+
+# Operation: Presence Service need to communicate with ril.
+allow rild system_app:binder { transfer call };
+
+# Purpose : Add for HIDL service
+hal_client_domain(radio, md_monitor_hal);
+
+# Purpose : for app labeled by radio to auto start md_monitor
+set_prop(radio, config_prop);
+
+# Purpose : for setting ims nr enable property
+get_prop(radio, mtk_vonr_prop)
+get_prop(radio, mtk_vinr_prop)
+
+# Purpose : for [CMDC Tester] run on user load
+allow radio media_rw_data_file:dir search;
+allow radio proc_mtkcooler:dir search;
+allow radio proc_mtktz:dir search;
+allow radio md_monitor:dir search;
+
+# Operation : Migration for SWO policy package survey
+allow radio sdcard_type:dir { write create add_name };
+allow radio sdcard_type:file { read write getattr open create };
+allow radio zygote:unix_stream_socket { getopt getattr };
+
+# Purpose : [ALPS01756200] wwop boot up fail
+allow radio custom_file:dir { search getattr open read };
+allow radio custom_file:file { read open getattr};
+
+# Purpose : for device bring up, not to block early migration/sanity
+allow radio dm_agent_binder_service:service_manager find;
+
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow radio program_binary_service:service_manager find;
+
+# Purpose : for system app labled by radio to search file
+allow radio system_app_data_file:dir search;
+
+# Purpose : for [CMDC Tester] run on user load
+allow radio media_rw_data_file:dir search;
+allow radio proc_mtkcooler:dir search;
+allow radio proc_mtktz:dir search;
+
+# Purpose: CTSC Disable aee for mtbf test
+allow radio aee_aed:unix_stream_socket connectto;
+
+# Purpose: CTSC Access agprsInterface
+hal_client_domain(radio,mtk_hal_lbs)

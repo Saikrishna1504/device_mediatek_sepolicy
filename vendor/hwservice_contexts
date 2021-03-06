@@ -1,0 +1,143 @@
+# bluetooth
+vendor.mediatek.hardware.bluetooth::IMtkBluetoothHci 			u:object_r:mtk_hal_bluetooth_hwservice:s0
+
+# radio
+vendor.mediatek.hardware.mtkradioex::IMtkRadioEx u:object_r:mtk_hal_rild_hwservice:s0
+vendor.mediatek.hardware.radio::ISap u:object_r:mtk_hal_rild_hwservice:s0
+vendor.mediatek.hardware.interfaces_tc1.mtkradioex_tc1::IMtkRadioEx u:object_r:mtk_hal_rild_hwservice:s0
+vendor.mediatek.hardware.radio_op::IRadioOp u:object_r:mtk_hal_rild_hwservice:s0
+
+# power hidl
+vendor.mediatek.hardware.mtkpower::IMtkPerf u:object_r:mtk_hal_power_hwservice:s0
+vendor.mediatek.hardware.mtkpower::IMtkPower u:object_r:mtk_hal_power_hwservice:s0
+vendor.mediatek.hardware.power::IPerf u:object_r:mtk_hal_power_hwservice:s0
+vendor.mediatek.hardware.power::IPower u:object_r:mtk_hal_power_hwservice:s0
+
+# LBS HIDL
+vendor.mediatek.hardware.lbs::ILbs u:object_r:mtk_hal_lbs_hwservice:s0
+
+# IMSA HIDL
+vendor.mediatek.hardware.imsa::IImsa u:object_r:mtk_hal_imsa_hwservice:s0
+
+# nvram hidl
+vendor.mediatek.hardware.nvram::INvram u:object_r:nvram_agent_binder_hwservice:s0
+
+# PQ HIDL
+vendor.mediatek.hardware.pq::IPictureQuality u:object_r:mtk_hal_pq_hwservice:s0
+
+# keymaster attestation hidl
+vendor.mediatek.hardware.keymaster_attestation::IKeymasterDevice u:object_r:mtk_hal_keyattestation_hwservice:s0
+
+# FM HIDL
+vendor.mediatek.hardware.fm::IFmRadio u:object_r:mtk_hal_fm_hwservice:s0
+
+# log hidl
+vendor.mediatek.hardware.log::ILog u:object_r:mtk_hal_log_hwservice:s0
+
+# em hidl
+vendor.mediatek.hardware.engineermode::IEmd u:object_r:mtk_hal_em_hwservice:s0
+
+# MMS HIDL
+vendor.mediatek.hardware.mms::IMms u:object_r:hal_mms_hwservice:s0
+
+# GPU HIDL
+vendor.mediatek.hardware.gpu::IGraphicExt u:object_r:mtk_hal_gpu_hwservice:s0
+
+# modem db filter hidl
+vendor.mediatek.hardware.modemdbfilter::ICopyDBFilter u:object_r:mtk_hal_md_dbfilter_hwservice:s0
+
+# Camera
+vendor.mediatek.hardware.camera.lomoeffect::ILomoEffect u:object_r:hal_camera_hwservice:s0
+vendor.mediatek.hardware.camera.ccap::ICCAPControl u:object_r:hal_camera_hwservice:s0
+vendor.mediatek.hardware.camera.bgservice::IBGService u:object_r:mtk_hal_bgs_hwservice:s0
+vendor.mediatek.hardware.camera.isphal::IISPModule u:object_r:mtk_hal_bgs_hwservice:s0
+vendor.mediatek.hardware.camera.postproc::IPostDevice u:object_r:mtk_hal_bgs_hwservice:s0
+
+# HDMI HIDL
+vendor.mediatek.hardware.hdmi::IMtkHdmiService u:object_r:mtk_hal_hdmi_hwservice:s0
+
+# ATMs hidl
+vendor.mediatek.hardware.camera.atms::IATMs u:object_r:hal_camera_hwservice:s0
+
+# Soter
+vendor.microtrust.hardware.soter::ISoter                                      u:object_r:soter_hwservice:s0
+
+# Wifi Supplicant
+vendor.qti.hardware.wifi.supplicant::ISupplicantVendor                        u:object_r:hal_wifi_supplicant_hwservice:s0
+
+# BTconfigstore
+vendor.qti.hardware.btconfigstore::IBTConfigStore                             u:object_r:hal_btconfigstore_hwservice:s0
+
+# Dolby
+vendor.dolby.hardware.dms::IDms                                               u:object_r:dms_hwservice:s0
+
+# NFC
+vendor.nxp.hardware.nfc::INqNfc                                               u:object_r:nxpnfc_hwservice:s0
+vendor.nxp.nxpese::INxpEse                                                    u:object_r:nxpnfc_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc                                                    u:object_r:nxpnfc_hwservice:s0
+
+vendor.mediatek.hardware.camera.advcam::IAdvCamControl u:object_r:hal_camera_hwservice:s0
+vendor.mediatek.hardware.wfo::IWifiOffload u:object_r:mtk_hal_wfo_hwservice:s0
+
+# DRM Key Installation HIDL
+vendor.mediatek.hardware.keyinstall::IKeyinstall u:object_r:mtk_hal_keyinstall_hwservice:s0
+
+vendor.mediatek.hardware.videotelephony::IVideoTelephony u:object_r:mtk_hal_videotelephony_hwservice:s0
+vendor.mediatek.hardware.presence::IPresence u:object_r:volte_uce_ua_hwservice:s0
+vendor.mediatek.hardware.mtkcodecservice::IMtkCodecService u:object_r:hal_mtkcodecservice_hwservice:s0
+vendor.mediatek.hardware.netdagent::INetdagent u:object_r:mtk_hal_netdagent_hwservice:s0
+vendor.mediatek.hardware.rcs::IRcs u:object_r:volte_rcs_ua_hwservice:s0
+vendor.mediatek.hardware.camera.callbackclient::IMtkCallbackClient u:object_r:hal_camera_hwservice:s0
+vendor.mediatek.hardware.dfps::IFpsPolicyService u:object_r:mtk_hal_dfps_hwservice:s0
+vendor.mediatek.hardware.dplanner::IDPlanner u:object_r:mtk_hal_dplanner_hwservice:s0
+
+# tablet DRM Key Manage HIDL
+vendor.mediatek.hardware.keymanage::IKeymanage u:object_r:mtk_hal_keymanage_hwservice:s0
+
+vendor.mediatek.hardware.pplagent::IPplAgent u:object_r:mtk_hal_pplagent_hwservice:s0
+
+# ATCI
+vendor.mediatek.hardware.atci::IAtcid u:object_r:hal_atci_hwservice:s0
+
+# Android Q diagnostic framework migration
+vendor.mediatek.hardware.dmc::IDmcService u:object_r:mtk_hal_dmc_hwservice:s0
+
+# Android Q diagnostic framework migration
+vendor.mediatek.hardware.apmonitor::IApmService u:object_r:mtk_hal_apm_hwservice:s0
+
+# ==============================================
+# MICROTRUST Policy Rule
+# ==============================================
+
+# microtrust THH hidl
+vendor.microtrust.hardware.thh::IThhDevice u:object_r:hal_thh_hwservice:s0
+
+# microtrust TUI hidl
+vendor.microtrust.hardware.tui::ITuiDevice u:object_r:hal_tui_hwservice:s0
+
+# microtrust Client Api hidl
+vendor.microtrust.hardware.capi::IClientApiDevice u:object_r:hal_capi_hwservice:s0
+
+# IMtkSupplicant hidl, to export Mediatek supplicant hidl interface to framework
+vendor.mediatek.hardware.wifi.supplicant::ISupplicant u:object_r:hal_wifi_supplicant_hwservice:s0
+
+vendor.mediatek.hardware.camera.security::ISecureCamera u:object_r:hal_camera_hwservice:s0
+vendor.mediatek.hardware.camera.frhandler::IFRHandler u:object_r:hal_camera_hwservice:s0
+
+# Purpose : Add for HIDL service
+vendor.mediatek.hardware.mdmonitor::IMDMonitorService u:object_r:mtk_mdm_hidl_server:s0
+
+# omadm hidl
+vendor.mediatek.hardware.omadm::IOmadm u:object_r:mtk_hal_omadm_hwservice:s0
+
+# nwk opt HIDL
+vendor.mediatek.hardware.nwk_opt::INwkOpt u:object_r:mtk_hal_nwk_opt_hwservice:s0
+
+vendor.mediatek.hardware.clientapi::IClientapi u:object_r:volte_clientapi_ua_hwservice:s0
+
+# ==============================================
+# Trustonic Policy Rule
+# ==============================================
+vendor.trustonic.tee::ITee                        u:object_r:hal_tee_hwservice:s0
+vendor.trustonic.tee.tui::ITui                    u:object_r:hal_tee_hwservice:s0
+vendor.trustonic.teeregistry::ITeeRegistry        u:object_r:hal_teeregistry_hwservice:s0

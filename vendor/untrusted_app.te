@@ -1,0 +1,77 @@
+# Purpose: Allow MTK modified ElephantStress and WhatsTemp to read thermal zone temperatures
+#					 from MTK kernel modules for thermal tests at OEM/ODM.
+allow untrusted_app proc_mtktz:dir search;
+allow untrusted_app proc_mtktz:file r_file_perms;
+allow untrusted_app proc_kernel:file { getattr open read };
+
+# Purpose: Allow same-process GPU library to call MDP/CMDQ via MTK MDP HAL
+#          from app process, instead of via same-process MDP library, to
+#          protect CMDQ device node.
+hal_client_domain(untrusted_app, hal_mms)
+
+# Purpose: Allow untrusted_app To execute
+allow untrusted_app app_data_file:file execute;
+auditallow untrusted_app app_data_file:file { execute execute_no_trans };
+
+# Purpose: Kernel Osrelease Proc
+dontaudit untrusted_app proc:file r_file_perms;
+dontaudit untrusted_app proc_vmstat:file r_file_perms;
+
+# Purpose : Allow svp client alloc sec mem
+allow untrusted_app proc_secmem:file { read ioctl open };
+
+# TrustKernel add
+userdebug_or_eng(`
+	allow untrusted_app tkcore_admin_device:chr_file  { ioctl read write open };
+')
+
+# Purpose :[Launcher2][View update graphics]
+# Package Name: com.android.launcher2
+# allow untrusted_app guiext-server:binder { transfer call };
+
+# Purpose : allow untrusted_app access ntfs device
+allow untrusted_app fuseblk:dir search;
+allow untrusted_app fuseblk:file read;
+allow untrusted_app fuseblk:file rw_file_perms;
+
+# Purpose :
+# avc: denied { write } for name="aee_interim" dev="dm-0" ino=8236
+# scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:coredump_file:s0
+# tclass=dir permissive=0
+userdebug_or_eng(`
+  allow untrusted_app coredump_file:dir { write };
+')
+
+# Purpose : Move from tk sepolicy for ViLTE
+allow untrusted_app vtservice:dir search;
+allow untrusted_app mediaserver:dir search;
+
+# Purpose: allow vendor's osi to use tcp socket
+allow untrusted_app osi:tcp_socket { create connect write read bind accept listen getattr setattr getopt setopt };
+
+# Purpose: Allow untrusted_app to use HIDL and access vendor_neuralnetworks
+allow untrusted_app vendor_neuralnetworks:binder { call transfer };
+allow untrusted_app debugfs_ion:dir search;
+
+# Purpose: Allow untrusted_app to access mdlactl_device and vpu_device
+allow untrusted_app mdla_device:chr_file { rw_file_perms };
+allow untrusted_app vpu_device:chr_file { rw_file_perms };
+
+# Purpose : for MTK Emulator HW GPU
+allow untrusted_app qemu_pipe_device:chr_file rw_file_perms;
+
+# CTS issue
+allow untrusted_app proc_lk_env:file getattr;
+allow untrusted_app proc_sysrq:file getattr;
+allow untrusted_app sdcard_type:file execute;
+allow untrusted_app protect_f_data_file:dir getattr;
+allow untrusted_app protect_s_data_file:dir getattr;
+
+# Purpose : allow test APK to use MediaScannerService
+allow untrusted_app storage_stub_file:dir getattr;
+
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow untrusted_app program_binary_service:service_manager find;
+
+# Purpose : Add permission for mtk radio service find from ServiceManager.
+allow untrusted_app mtk_radio_service:service_manager find;
