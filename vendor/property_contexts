@@ -887,3 +887,6 @@ ro.vendor.mtk_microtrust_tee_support u:object_r:ro_vendor_mtk_microtrust_tee_pro
 persist.vendor.mtk_acs_version u:object_r:mtk_acs_version_prop:s0
 persist.vendor.mtk_acs_support u:object_r:mtk_acs_support_prop:s0
 persist.vendor.mtk_acs_url u:object_r:mtk_acs_url_prop:s0
+
+# DP lanner
+init.svc.dplanner-2-0            u:object_r:vendor_dpliner_prop:s0
