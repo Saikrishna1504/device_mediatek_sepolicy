@@ -1,0 +1,60 @@
+# Operation : dontaudit writing to timerslack_ns
+dontaudit system_server appdomain:file w_file_perms;
+allow system_server ota_package_file:dir getattr;
+allow uncrypt uncrypt:capability fowner;
+
+# Purpose: receive dropbox message
+allow system_server aee_aed:fifo_file w_file_perms;
+allow system_server aee_aed:fd use;
+
+# Operation:Q Migration
+allow system_server mddb_filter_data_file:dir getattr;
+
+# Purpose : for device bring up, not to block early migration/sanity
+allow system_server aal_service:service_manager find;
+
+# Purpose: allow atci to use NSIOT firewall
+# Package: com.mediatek.atci.service
+
+# Purpose : Add permission for aee socket access to report Java Layer Exception
+allow system_server aee_aed:unix_stream_socket connectto;
+
+# Purpose : Add mtk_connmetrics_service for CTA's celluar data control
+allow system_server mtk_connmetrics_service:service_manager add;
+
+# Purpose : Record and get permission
+allow system_server mtk_permrecords_service:service_manager add;
+
+# Purpose : access gpu hal
+hal_client_domain(system_server, hal_gpu)
+
+# Purpose : allow to get mtk_rsc_sys_prop
+get_prop(system_server, mtk_rsc_sys_prop);
+
+# Purpose : Add mtk_autoboot_service for CTA's autoboot app control
+allow system_server mtk_autoboot_service:service_manager add;
+
+# Purpose : for wifi p2p functionality
+allow system_server dhcp_data_file:dir rw_dir_perms;
+allow system_server dhcp_data_file:file create_file_perms;
+
+# Purpose : for relabeling files in /data/anr/ created at bootup
+allow system_server anr_data_file:file relabelto;
+
+# Purpose : for operate HDMI device
+allow system_server graphics_device:chr_file r_file_perms;
+
+# Purpose : for bring up
+allow system_server anr_data_file:dir relabelfrom;
+
+# Purpose : Allow system server to execute "rm r /data/piggybank"
+allow system_server toolbox_exec:file x_file_perms;
+
+# Purpose : Allow system server to open/read/write ioctl for screen freeze/unfreeze operations
+allow system_server graphics_device:chr_file { open read write ioctl };
+
+# Purpose : Allow system server to set property ril eboot, splitted usp prop to usp srv prop
+allow system_server radio_prop:property_service set;
+
+# Fix bootup violation
+allow system_server vendor_framework_file:dir r_dir_perms;

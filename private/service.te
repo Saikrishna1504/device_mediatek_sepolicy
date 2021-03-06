@@ -1,0 +1,9 @@
+# Other Services
+type aal_service, service_manager_type;
+type mtk_connmetrics_service, service_manager_type;
+type terservice_service, service_manager_type;
+type camerapostalgo_service, service_manager_type;
+
+# System Server Services
+type mtk_test_ampolicymaker_service, app_api_service, system_server_service, service_manager_type;
+type lwx_service, app_api_service, system_server_service, service_manager_type;

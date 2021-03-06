@@ -1,0 +1,73 @@
+allow platform_app system_app_service:service_manager find;
+allow platform_app init:unix_stream_socket connectto;
+
+# Purpose: Allow to use selinux for hal_power
+hal_client_domain(platform_app, hal_power)
+
+# Purpose : DebugLoggerUI access data/debuglogger/ folder
+# Package: com.debug.loggerui
+allow platform_app debuglog_data_file:dir create_dir_perms;
+allow platform_app debuglog_data_file:file create_file_perms;
+
+# Purpose : [ALPS01782971]Settings need read&write to system_app_data_file
+# Package: com.android.settings
+allow platform_app system_app_data_file:file {read write};
+
+# Purpose : [NFC][can not get nfc service]
+# Package: com.android.gallery3d
+allow platform_app nfc_service:service_manager find;
+
+# Purpose : For hongbao optimization
+allow platform_app mtk_connmetrics_service:service_manager find;
+
+# Purpose : allow platform_app to find aal_service
+allow platform_app aal_service:service_manager { find };
+
+# Purpose : access gpu hal
+hal_client_domain(platform_app, hal_gpu)
+
+# Purpose : allow to get mtk_cta_set and mtk_cta_support property
+get_prop(platform_app, mtk_cta_set_prop);
+
+# Purpose : Camera need read cl_cam_status
+# Package: com.mediatek.camera
+allow platform_app proc_cl_cam_status:file r_file_perms;
+
+# Purpose : allow to get mtk_rsc_sys_prop
+get_prop(platform_app, mtk_rsc_sys_prop);
+
+# Purpose : allow to set ctl.start/stop/restart property
+set_prop(platform_app, ctl_campostalgo_prop);
+
+# Purpose : allow to find camera postalgo service.
+allow platform_app camerapostalgo_service:service_manager find;
+
+# Purpose : FileManager can access attribute of file execute
+# Package: com.mediatek.filemanager
+allow platform_app sdcard_type:file execute;
+
+# Purpose : camera app want to inovke SystemProperties.set("xxx", "xxx") need this permission
+# Package: com.mediatek.camera
+allow platform_app property_socket:sock_file write;
+
+# Purpose : AppManager Install need pm access permission
+# Package: com.mediatek.wearable
+allow platform_app system_app_data_file:dir search;
+
+# Purpose : allow platform_app to access debugfs
+# Package: memtrack
+allow platform_app debugfs:file getattr;
+
+# Purpose : [ALPS01785313] Permission denied for dump hprof
+# Package: com.android.gallery3d
+allow platform_app anr_data_file:file rw_file_perms;
+
+# Purpose : Gallery needs to search radio data when send mms
+# Package: com.android.gallery3d
+allow platform_app radio_data_file:dir search;
+
+# Purpose : gallery needs to search mediaserver when browsing videos
+# Package: com.android.gallery3d
+allow platform_app mediaserver:dir search;
+
+allow platform_app vendor_app_file:file execute;
