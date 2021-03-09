@@ -898,3 +898,6 @@ vendor.volte_md_status          u:object_r:md_status_prop:s0
 # Wi-Fi
 vendor.wlan.firmware.       u:object_r:wlan_fw_prop:s0
 vendor.wlan.driver.         u:object_r:wlan_fw_prop:s0
+
+# Atcid
+persist.atm_enabled                   u:object_r:persist_atm_prop:s0
