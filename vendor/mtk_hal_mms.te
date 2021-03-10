@@ -57,3 +57,6 @@ allow mtk_hal_mms untrusted_app_all:fd use;
 
 # Purpose : Allow MMS hals to read render props
 get_prop(mtk_hal_mms, render_prop)
+
+# Boot Mode
+allow mtk_hal_mms sysfs_boot_mode:file r_file_perms;
