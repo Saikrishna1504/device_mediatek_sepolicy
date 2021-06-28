@@ -192,3 +192,6 @@ allow init rawfs:file getattr;
 
 # Purpose : allow insert modules from rootfs
 allow init rootfs:system module_load;
+
+# Purpose : enable ion device chr rw
+allow init ion_device:chr_file rw_file_perms;
