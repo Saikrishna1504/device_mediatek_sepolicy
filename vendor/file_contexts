@@ -1233,3 +1233,6 @@
 # System/bin files
 #
 /system/bin/program_binary_service u:object_r:program_binary_exec:s0
+
+# Purpose: Mtk Graphics Hals
+/(vendor|system/vendor)/bin/hw/android\.hardware\.graphics\.allocator@4\.0-service-mediatek   u:object_r:hal_graphics_allocator_default_exec:s0
