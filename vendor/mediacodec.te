@@ -175,3 +175,6 @@ allow mediacodec custom_file:dir search;
 #============= mediacodec ==============
 allow mediacodec tmpfs:lnk_file read;
 allow mediacodec media_rw_data_file:file { write read append};
+
+# Purpose : Allow mediacodec to use vcodec_file data
+allow mediacodec vcodec_file:dir r_dir_perms;
