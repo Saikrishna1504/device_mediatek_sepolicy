@@ -195,3 +195,6 @@ allow init rootfs:system module_load;
 
 # Purpose : enable ion device chr rw
 allow init ion_device:chr_file rw_file_perms;
+
+# MTK Vibrator
+allow init sysfs_vibrator:file r_file_perms;
