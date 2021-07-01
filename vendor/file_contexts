@@ -1250,3 +1250,13 @@
 /(vendor|system/vendor)/lib(64)?/libgralloc_extra\.so      u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libgralloctypes_mtk\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libgralloc_metadata\.so   u:object_r:same_process_hal_file:s0
+
+# Purpose: Mtk Apuware
+/(vendor|system/vendor)/lib(64)?/libapu-apuwarexrp\.mtk\.so               u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libapu-apuwareutils\.mtk\.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libapu-apuwareapusys\.mtk\.so            u:object_r:same_process_hal_file:s0
+
+# Purpose: Mtk Apuware interfaces
+/(vendor|system/vendor)/lib(64)?/vendor\.mediatek\.hardware\.apuware\.apusys@1.0\.so  u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.mediatek\.hardware\.apuware\.utils@1.0\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.mediatek\.hardware\.apuware\.xrp@1.0\.so     u:object_r:same_process_hal_file:s0
