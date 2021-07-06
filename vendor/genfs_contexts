@@ -288,3 +288,6 @@ genfscon sysfs /devices/platform/bus/180f0000.WIFI/net/p2p1/mtu u:object_r:sysfs
 
 # Purpose : thermal sysfs files
 genfscon sysfs /class/thermal               u:object_r:sysfs_thermal:s0
+
+# Purpose : ion clients_summary
+genfscon proc /ion/clients/clients_summary u:object_r:proc_ion_clients_summary:s0

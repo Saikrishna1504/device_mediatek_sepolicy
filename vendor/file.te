@@ -501,3 +501,6 @@ type vendor_shading_file, file_type, data_file_type;
 
 # CPUFREQ
 type mbimd_exec, exec_type, file_type, vendor_file_type;
+
+# Purpose : ion clients_summary
+type proc_ion_clients_summary, fs_type, proc_type;
