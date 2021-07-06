@@ -160,3 +160,6 @@ allow mtk_hal_power mtk_hal_nwk_opt:binder call;
 hal_client_domain(mtk_hal_power, hal_nwk_opt);
 
 allow mtk_hal_power debugfs_tracing:file write;
+
+# Displowpower
+allow mtk_hal_power proc_idletime:file rw_file_perms;
