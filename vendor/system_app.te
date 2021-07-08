@@ -295,3 +295,6 @@ allow system_app ota_package_file:file { read write create open rename getattr u
 
 # Purpose : allow SystemUpdate to access Update engine
 allow system_app update_engine:binder { call transfer };
+
+# MTK FM Radio
+allow system_app fm_device:chr_file rw_file_perms;
