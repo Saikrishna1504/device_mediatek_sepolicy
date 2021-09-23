@@ -511,6 +511,7 @@
 /(system\/vendor|vendor)/bin/ccci_fsd u:object_r:ccci_fsd_exec:s0
 /(system\/vendor|vendor)/bin/fuelgauged u:object_r:fuelgauged_exec:s0
 /(system\/vendor|vendor)/bin/fuelgauged_nvram u:object_r:fuelgauged_nvram_exec:s0
+/(system\/vendor|vendor)/bin/gbe u:object_r:gbe_native_exec:s0
 /(system\/vendor|vendor)/bin/gsm0710muxd u:object_r:gsm0710muxd_exec:s0
 /(system\/vendor|vendor)/bin/mmc_ffu u:object_r:mmc_ffu_exec:s0
 /(system\/vendor|vendor)/bin/mtk_agpsd u:object_r:mtk_agpsd_exec:s0

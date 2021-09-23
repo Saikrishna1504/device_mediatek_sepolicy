@@ -197,3 +197,6 @@ allow init ion_device:chr_file rw_file_perms;
 
 # MTK Vibrator
 allow init sysfs_vibrator:file r_file_perms;
+
+# GBE
+allow init gbe_native_exec:file execute;
