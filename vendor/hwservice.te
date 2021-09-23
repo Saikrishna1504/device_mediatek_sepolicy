@@ -1,4 +1,5 @@
 # Bluetooth
+type mtk_hal_bluetooth_audio_hwservice, hwservice_manager_type;
 type mtk_hal_bluetooth_hwservice, hwservice_manager_type;
 
 # Rild
