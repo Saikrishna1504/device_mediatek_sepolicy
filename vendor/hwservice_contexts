@@ -146,3 +146,6 @@ vendor.trustonic.teeregistry::ITeeRegistry        u:object_r:hal_teeregistry_hws
 vendor.mediatek.hardware.apuware.apusys::INeuronApusys u:object_r:hal_neuralnetworks_hwservice:s0
 vendor.mediatek.hardware.apuware.utils::IApuwareUtils  u:object_r:hal_neuralnetworks_hwservice:s0
 vendor.mediatek.hardware.apuware.xrp::INeuronXrp       u:object_r:hal_neuralnetworks_hwservice:s0
+
+# VPU
+vendor.mediatek.hardware.vpu::Ivpu                                            u:object_r:hal_neuralnetworks_hwservice:s0
