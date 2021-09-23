@@ -101,3 +101,6 @@ allow mnld sysfs_dt_firmware_android:file r_file_perms;
 # Purpose : MTK Lights
 allow mnld sysfs_leds:dir r_dir_perms;
 allow mnld sysfs_leds:file rw_file_perms;
+
+# Allow read write perms to gps_emi device
+allow mnld gps_emi_device:chr_file rw_file_perms;
