@@ -1281,3 +1281,6 @@
 /sys/kernel/ged/hal/dvfs_margin_value(/.*)? u:object_r:sysfs_ged:s0
 /sys/kernel/ged/hal/loading_base_dvfs_step(/.*)? u:object_r:sysfs_ged:s0
 /sys/kernel/ged/hal/timer_base_dvfs_margin(/.*)? u:object_r:sysfs_ged:s0
+
+# AAL libs
+/vendor/lib(64)?/libaal_mtk\.so                                                                 u:object_r:same_process_hal_file:s0
