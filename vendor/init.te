@@ -177,8 +177,11 @@ allow init proc_drop_caches:file w_file_perms;
 allow init proc_cpu_loading:file setattr;
 allow init proc_low_memory_hit:file setattr;
 
-allow init vendor_neuralnetworks_exec:file { execute };
-allow init mtk_hal_neuralnetworks_exec:file { execute };
+allow init {
+    bp_kmsetkey_ca_exec
+    mtk_hal_neuralnetworks_exec
+    vendor_neuralnetworks_exec
+}:file execute;
 
 # Purpose : enable socket for ATCI
 allow init socket_device:sock_file create_file_perms;
