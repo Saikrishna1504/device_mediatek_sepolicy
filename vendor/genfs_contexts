@@ -216,6 +216,7 @@ genfscon proc /fliperfs u:object_r:proc_fliperfs:s0
 genfscon sysfs /module/ged u:object_r:sysfs_ged:s0
 genfscon sysfs /module/fbt_cpu u:object_r:sysfs_fbt_cpu:s0
 genfscon sysfs /module/fbt_fteh u:object_r:sysfs_fbt_fteh:s0
+genfscon sysfs /module/xgf u:object_r:sysfs_xgf:s0
 
 # Purpose: Allow powerhal to control cache audit
 genfscon sysfs /module/ca_drv u:object_r:sysfs_ca_drv:s0

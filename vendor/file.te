@@ -507,3 +507,9 @@ type proc_ion_clients_summary, fs_type, proc_type;
 
 # Purpose : idletime timer
 type proc_idletime, fs_type, proc_type;
+
+# sysfs fpsgo
+type sysfs_fpsgo, fs_type, sysfs_type;
+
+# sysfs xgf
+type sysfs_xgf, fs_type, sysfs_type;

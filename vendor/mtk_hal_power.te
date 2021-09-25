@@ -163,3 +163,15 @@ allow mtk_hal_power debugfs_tracing:file write;
 
 # Displowpower
 allow mtk_hal_power proc_idletime:file rw_file_perms;
+
+# sysfs therm
+allow mtk_hal_power sysfs_therm:file w_file_perms;
+
+# sysfs fpsgo
+allow mtk_hal_power sysfs_fpsgo:file w_file_perms;
+
+# sysfs ged
+allow mtk_hal_power sysfs_ged:file w_file_perms;
+
+# sysfs xgf
+allow mtk_hal_power sysfs_xgf:file w_file_perms;
