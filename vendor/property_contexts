@@ -897,6 +897,7 @@ init.svc.dplanner-2-0            u:object_r:vendor_dpliner_prop:s0
 
 # IMS
 vendor.volte_md_status          u:object_r:md_status_prop:s0
+persist.vendor.mtk_hvolte_indicator u:object_r:mtk_hvolte_indicator_prop:s0
 
 # Wi-Fi
 vendor.wlan.firmware.       u:object_r:wlan_fw_prop:s0
@@ -907,3 +908,6 @@ persist.atm_enabled                   u:object_r:persist_atm_prop:s0
 
 #=============NWK property============
 persist.vendor.gsm. u:object_r:vendor_mtk_nwk_opt_prop:s0
+
+# SMS
+vendor.sms.md.ready         u:object_r:sms_md_ready_prop:s0

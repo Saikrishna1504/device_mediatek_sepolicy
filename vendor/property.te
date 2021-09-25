@@ -676,3 +676,9 @@ type wlan_fw_prop, property_type;
 
 #=============NWK property============
 type vendor_mtk_nwk_opt_prop, property_type, mtk_core_property_type;
+
+# SMS
+type sms_md_ready_prop, property_type;
+
+# HVOLTE
+type mtk_hvolte_indicator_prop, property_type;
