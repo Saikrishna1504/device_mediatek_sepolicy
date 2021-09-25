@@ -1,5 +1,6 @@
 type mtk_hal_usb, domain;
 hal_server_domain(mtk_hal_usb, hal_usb)
+hal_server_domain(mtk_hal_usb, hal_usb_gadget)
 
 type mtk_hal_usb_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(mtk_hal_usb)
@@ -9,3 +10,15 @@ allow hal_usb_default sysfs_dual_role_usb20:file {open read getattr};
 
 allow mtk_hal_usb sysfs_dual_role_usb20:dir {search read open};
 allow mtk_hal_usb sysfs_dual_role_usb20:file {open read getattr};
+
+allow mtk_hal_usb configfs:dir { search read open };
+allow mtk_hal_usb configfs:file { open read getattr };
+allow mtk_hal_usb configfs:lnk_file read;
+
+allow mtk_hal_usb property_socket:sock_file write;
+allow mtk_hal_usb init:unix_stream_socket connectto;
+
+allow mtk_hal_usb hidl_base_hwservice:hwservice_manager add;
+allow mtk_hal_usb hal_usb_gadget_hwservice:hwservice_manager find;
+
+set_prop(mtk_hal_usb, vendor_usb_prop)
