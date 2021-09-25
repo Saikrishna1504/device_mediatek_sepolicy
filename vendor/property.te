@@ -673,3 +673,6 @@ type update_started_prop, property_type, mtk_core_property_type;
 
 # Wi-Fi
 type wlan_fw_prop, property_type;
+
+#=============NWK property============
+type vendor_mtk_nwk_opt_prop, property_type, mtk_core_property_type;

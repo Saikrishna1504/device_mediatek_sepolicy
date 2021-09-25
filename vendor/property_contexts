@@ -904,3 +904,6 @@ vendor.wlan.driver.         u:object_r:wlan_fw_prop:s0
 
 # Atcid
 persist.atm_enabled                   u:object_r:persist_atm_prop:s0
+
+#=============NWK property============
+persist.vendor.gsm. u:object_r:vendor_mtk_nwk_opt_prop:s0
