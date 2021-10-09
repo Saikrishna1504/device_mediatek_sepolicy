@@ -357,3 +357,7 @@ allow meta_tst mobicore_user_device:chr_file { read write ioctl open };
 # Purpose : meta set atci property
 set_prop(meta_tst, atci_sys_prop);
 allow meta_tst adb_atci_socket:sock_file write;
+
+allow meta_tst hidl_memory_hwservice:hwservice_manager find;
+hal_client_domain(meta_tst, hal_capi)
+hal_client_domain(meta_tst, hal_allocator)

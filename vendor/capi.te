@@ -12,11 +12,8 @@ init_daemon_domain(hal_capi_default)
 # Associate hal_capi_hwservice with all server domain
 add_hwservice(hal_capi_server, hal_capi_hwservice)
 
-# Give permission for hal_capi_client/meta_tst to find hal_capi_hwservice via hwservice_manager
+# Give permission for hal_capi_client to find hal_capi_hwservice via hwservice_manager
 allow hal_capi_client hal_capi_hwservice:hwservice_manager find;
-allow meta_tst hidl_memory_hwservice:hwservice_manager find;
-hal_client_domain(meta_tst, hal_capi)
-hal_client_domain(meta_tst, hal_allocator)
 
 # Access to /dev/hwbinder.
 hwbinder_use(hal_capi_default);
