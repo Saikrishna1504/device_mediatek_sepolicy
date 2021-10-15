@@ -88,7 +88,7 @@ binder_call(mtk_hal_camera, platform_app)
 
 # Render Props
 get_prop(platform_app, exported_default_prop)
-get_prop(platform_app, exported_audio_prop)
+get_prop(platform_app, audio_config_prop)
 get_prop(platform_app, vendor_default_prop)
 get_prop(platform_app, render_prop)
 
