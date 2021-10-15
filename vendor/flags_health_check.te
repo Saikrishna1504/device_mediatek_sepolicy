@@ -52,7 +52,7 @@ allow flags_health_check dynamic_system_prop:file { getattr map open };
 allow flags_health_check audio_config_prop:file { getattr map open };
 allow flags_health_check exported_bluetooth_prop:file { getattr map open };
 allow flags_health_check exported_overlay_prop:file { getattr map open };
-allow flags_health_check exported_wifi_prop:file { getattr map open };
+allow flags_health_check wifi_hal_prop:file { getattr map open };
 allow flags_health_check graphics_hwc_hdr_prop:file { getattr map open };
 allow flags_health_check graphics_hwc_latch_unsignaled_prop:file { getattr map open };
 allow flags_health_check graphics_hwc_pid_prop:file { getattr map open };
