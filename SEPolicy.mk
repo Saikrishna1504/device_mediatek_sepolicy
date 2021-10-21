@@ -4,13 +4,13 @@
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
 # Board specific SELinux policy variable definitions
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
         device/mediatek/sepolicy/vendor
 
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
         device/mediatek/sepolicy/public
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
         device/mediatek/sepolicy/private
 
 # Inherit lineage sepolicy for mediatek devices
