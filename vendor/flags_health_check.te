@@ -56,7 +56,7 @@ allow flags_health_check wifi_hal_prop:file { getattr map open };
 allow flags_health_check graphics_hwc_hdr_prop:file { getattr map open };
 allow flags_health_check graphics_hwc_latch_unsignaled_prop:file { getattr map open };
 allow flags_health_check graphics_hwc_pid_prop:file { getattr map open };
-allow flags_health_check gsid_prop:file { getattr map open };
+allow flags_health_check ctl_gsid_prop:file { getattr map open };
 allow flags_health_check heapprofd_enabled_prop:file { getattr map open };
 allow flags_health_check hwservicemanager_prop:file { getattr map open };
 allow flags_health_check init_svc_aee_aedv_prop:file { getattr map open };
