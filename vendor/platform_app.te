@@ -92,7 +92,6 @@ get_prop(platform_app, audio_config_prop)
 get_prop(platform_app, vendor_default_prop)
 get_prop(platform_app, render_prop)
 
-allow platform_app app_data_file:file execute;
 allow platform_app sysfs:dir read;
 allow platform_app sysfs_switch:dir search;
 allow platform_app mtk_cmdq_device:chr_file rw_file_perms;
