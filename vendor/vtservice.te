@@ -221,7 +221,6 @@ allowxperm vtservice proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_BQID
 };
 
-get_prop(vtservice, vendor_default_prop)
 get_prop(vtservice, vendor_vt_prop)
 
 allow vtservice hal_mms_hwservice:hwservice_manager find;

@@ -63,7 +63,6 @@ allow em_hidl nvdata_file:file { getattr read open };
 
 # Purpose : EM MCF search vendor dir
 allow em_hidl mnt_vendor_file:dir search;
-allow em_hidl vendor_default_prop:file read;
 
 # Purpose : EM BT usage
 allow em_hidl stpbt_device:chr_file { read write open };
