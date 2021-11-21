@@ -1,3 +1,8 @@
+# Build with broken namespaces
+# Userspace blobs are still dependent older props that
+# do not pass the VTS test cases.
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
+
 # Board specific SELinux policy variable definitions
 BOARD_SEPOLICY_DIRS := \
         device/mediatek/sepolicy/vendor
