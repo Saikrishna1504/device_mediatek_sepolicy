@@ -20,7 +20,7 @@ get_prop(pkm_service, mtk_ims_prop)
 get_prop(pkm_service, mtk_ims_eims_pdn_prop)
 
 # vendor.ril.data.pdn_info*
-get_prop(pkm_service, vendor_radio_prop)
+get_prop(pkm_service, vendor_mtk_radio_prop)
 
 # Purpose : Allow pkm_service to pull packet from netd
 allow pkm_service self:capability net_raw;

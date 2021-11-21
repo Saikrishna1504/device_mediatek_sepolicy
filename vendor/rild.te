@@ -98,8 +98,8 @@ allow rild vendor_toolbox_exec:file {execute_no_trans};
 # Purpose: Allow rild to get tel_switch_prop
 get_prop(rild, tel_switch_prop)
 
-# Purpose: allow rild access property of vendor_radio_prop
-set_prop(rild, vendor_radio_prop)
+# Purpose: allow rild access property of vendor_mtk_radio_prop
+set_prop(rild, vendor_mtk_radio_prop)
 
 # Purpose: allow rild access to vendor.ril.ipo system property
 set_prop(rild, vendor_ril_ipo_prop)

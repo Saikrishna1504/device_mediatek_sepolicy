@@ -18,4 +18,4 @@ allow volte_imcb ccci_device:chr_file rw_file_perms;
 allow volte_imcb property_socket:sock_file write;
 
 set_prop(volte_imcb, ril_mux_report_case_prop)
-set_prop(volte_imcb, vendor_radio_prop)
+set_prop(volte_imcb, vendor_mtk_radio_prop)

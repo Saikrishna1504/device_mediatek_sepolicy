@@ -80,7 +80,7 @@ allow vtservice_hidl mtkimsmddomain:udp_socket { setopt getattr read write };
 allow mtkimsmddomain vtservice_hidl:unix_stream_socket connectto;
 
 # MD-AP
-set_prop(mtkimsmddomain, vendor_radio_prop)
+set_prop(mtkimsmddomain, vendor_mtk_radio_prop)
 set_prop(mtkimsmddomain, ril_mux_report_case_prop)
 set_prop(mtkimsmddomain, mtk_md_version_prop)
 set_prop(mtkimsmddomain, mtk_network_prop)

@@ -92,7 +92,7 @@ allow mnld atci_service:unix_dgram_socket sendto;
 
 allow mnld sysfs_boot_mode:file { read open };
 
-set_prop(mnld, vendor_radio_prop);
+set_prop(mnld, vendor_mtk_radio_prop);
 
 allow mnld proc_cmdline:file r_file_perms;
 allow mnld sysfs_dt_firmware_android:dir r_dir_perms;

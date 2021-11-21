@@ -20,5 +20,5 @@ allow muxreport sysfs_ccci:file r_file_perms;
 # Purpose: Allow muxreport to get tel_switch_prop
 get_prop(muxreport, tel_switch_prop)
 
-# Purpose: allow muxreport access property of vendor_radio_prop
-set_prop(muxreport, vendor_radio_prop)
+# Purpose: allow muxreport access property of vendor_mtk_radio_prop
+set_prop(muxreport, vendor_mtk_radio_prop)

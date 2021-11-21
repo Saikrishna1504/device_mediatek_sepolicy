@@ -233,10 +233,10 @@ ro.boot.atm u:object_r:mtk_default_prop:s0
 vendor.connsysfw u:object_r:vendor_connsysfw_prop:s0
 
 #============Label telephony property=======#
-vendor.ril. u:object_r:vendor_radio_prop:s0
-ro.vendor.ril. u:object_r:vendor_radio_prop:s0
-vendor.gsm. u:object_r:vendor_radio_prop:s0
-persist.vendor.radio. u:object_r:vendor_radio_prop:s0
+vendor.ril. u:object_r:vendor_mtk_radio_prop:s0
+ro.vendor.ril. u:object_r:vendor_mtk_radio_prop:s0
+vendor.gsm. u:object_r:vendor_mtk_radio_prop:s0
+persist.vendor.radio. u:object_r:vendor_mtk_radio_prop:s0
 
 #=============allow bluetooth==============
 vendor.bthcisnoop u:object_r:vendor_bluetooth_prop:s0
@@ -364,6 +364,9 @@ ro.vendor.mtk_nn.option u:object_r:mtk_nn_option_prop:s0
 #============system wfc service property===========
 persist.vendor.wfc. u:object_r:mtk_wfc_serv_prop:s0
 
+# Atcid
+persist.atm_enabled                   u:object_r:persist_atm_prop:s0
+
 # Audio
 vendor.audio.hal.boot.               u:object_r:vendor_audio_prop:s0
 vendor.audio.voice.receiver.         u:object_r:vendor_audio_prop:s0
@@ -400,6 +403,13 @@ gce.test                              u:object_r:vendor_video_prop:s0
 vilte.test                            u:object_r:vendor_video_prop:s0
 prepend.test                          u:object_r:vendor_video_prop:s0
 
+# DP lanner
+init.svc.dplanner-2-0            u:object_r:vendor_dpliner_prop:s0
+
+# IMS
+vendor.volte_md_status          u:object_r:md_status_prop:s0
+persist.vendor.mtk_hvolte_indicator u:object_r:mtk_hvolte_indicator_prop:s0
+
 # Media
 mtk.vendor.omx.core.log          u:object_r:omx_core_prop:s0
 ro.mtk_crossmount_support        u:object_r:mtk_crossmount_support_prop:s0
@@ -429,6 +439,10 @@ persist.sys.thermal.        u:object_r:thermal_engine_prop:s0
 
 # WFD
 persist.vendor.setWFDInfo.R2             u:object_r:wfd_sys_debug_prop:s0
+
+# Wi-Fi
+vendor.wlan.firmware.       u:object_r:wlan_fw_prop:s0
+vendor.wlan.driver.         u:object_r:wlan_fw_prop:s0
 
 #=============allow mdinit==============
 ctl.vendor.ccci_rpcd         u:object_r:ctl_ccci_rpcd_prop:s0
@@ -891,20 +905,6 @@ ro.vendor.mtk_microtrust_tee_support u:object_r:ro_vendor_mtk_microtrust_tee_pro
 persist.vendor.mtk_acs_version u:object_r:mtk_acs_version_prop:s0
 persist.vendor.mtk_acs_support u:object_r:mtk_acs_support_prop:s0
 persist.vendor.mtk_acs_url u:object_r:mtk_acs_url_prop:s0
-
-# DP lanner
-init.svc.dplanner-2-0            u:object_r:vendor_dpliner_prop:s0
-
-# IMS
-vendor.volte_md_status          u:object_r:md_status_prop:s0
-persist.vendor.mtk_hvolte_indicator u:object_r:mtk_hvolte_indicator_prop:s0
-
-# Wi-Fi
-vendor.wlan.firmware.       u:object_r:wlan_fw_prop:s0
-vendor.wlan.driver.         u:object_r:wlan_fw_prop:s0
-
-# Atcid
-persist.atm_enabled                   u:object_r:persist_atm_prop:s0
 
 #=============NWK property============
 persist.vendor.gsm. u:object_r:vendor_mtk_nwk_opt_prop:s0
