@@ -51,3 +51,7 @@ allow mtk_hal_bluetooth wmt_prop:property_service set;
 
 # Purpose: Allow to search metadata files
 allow mtk_hal_bluetooth metadata_file:dir search;
+
+set_prop(mtk_hal_bluetooth, mtk_bluetooth_prop)
+get_prop(mtk_hal_bluetooth, wmt_prop)
+get_prop(mtk_hal_bluetooth, service_nvram_init_prop)

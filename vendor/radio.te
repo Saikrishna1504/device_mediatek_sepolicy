@@ -368,3 +368,12 @@ allow radio aee_aed:unix_stream_socket connectto;
 
 # Purpose: CTSC Access agprsInterface
 hal_client_domain(radio,mtk_hal_lbs)
+
+get_prop(radio, vendor_mtk_radio_prop)
+get_prop(radio, mtk_mims_prop)
+get_prop(radio, mtk_telephony_addon_prop)
+get_prop(radio, mtk_ril_mode_prop)
+get_prop(radio, vendor_vt_prop)
+get_prop(radio, mtk_vilte_support_prop)
+get_prop(radio, mtk_mobile_management_prop)
+get_prop(radio, mtk_dynims_prop)

@@ -239,3 +239,10 @@ hal_client_domain(vtservice, hal_codec2)
 allow vtservice_hidl socket_device:sock_file write;
 
 get_prop(vtservice, vendor_audio_prop)
+
+get_prop(vtservice, mtk_vilte_support_prop)
+get_prop(vtservice, mtk_viwifi_support_prop)
+get_prop(vtservice, mtk_volte_support_prop)
+get_prop(vtservice_hidl, mtk_vilte_support_prop)
+get_prop(vtservice_hidl, mtk_viwifi_support_prop)
+get_prop(vtservice_hidl, mtk_volte_support_prop)

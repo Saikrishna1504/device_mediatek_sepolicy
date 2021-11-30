@@ -405,3 +405,6 @@ allow mtk_hal_camera vendor_shading_file:dir create_dir_perms;
 allow mtk_hal_camera vendor_shading_file:file create_file_perms;
 
 allow mtk_hal_camera mtk_hal_pq_hwservice:hwservice_manager find;
+
+get_prop(mtk_hal_camera, vendor_debug_prop)
+get_prop(mtk_hal_camera, mtk_emcamera_prop)

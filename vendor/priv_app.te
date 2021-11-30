@@ -52,3 +52,5 @@ userdebug_or_eng(`
 
 # Purpose: Allow to use mtk telephony APIs (phoneEx)
 allow priv_app mtk_radio_service:service_manager find;
+
+get_prop(priv_app, vendor_debug_prop)

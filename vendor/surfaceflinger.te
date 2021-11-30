@@ -169,3 +169,7 @@ hal_client_domain(surfaceflinger, hal_gpu)
 # Purpose: Need to obtain permission to access ged
 # for fence monitoring and DVFS
 allow surfaceflinger proc_ged:file {open read write ioctl getattr};
+
+get_prop(surfaceflinger, mtk_pq_ro_prop)
+get_prop(surfaceflinger, mtk_pq_prop)
+get_prop(surfaceflinger, vendor_debug_prop)

@@ -104,3 +104,6 @@ allow mnld sysfs_leds:file rw_file_perms;
 
 # Allow read write perms to gps_emi device
 allow mnld gps_emi_device:chr_file rw_file_perms;
+
+get_prop(mnld, wmt_prop)
+get_prop(mnld, mtk_default_prop)

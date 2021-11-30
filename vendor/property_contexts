@@ -105,6 +105,7 @@ vendor.net.cdma.mdmstat u:object_r:net_cdma_mdmstat:s0
 
 #=============allow ccci_mdinit md status ==============
 vendor.mtk.md   u:object_r:mtk_md_prop:s0
+ro.vendor.mtk_flight_mode_power_off_md u:object_r:mtk_md_prop:s0
 #============= allow factory idle current prop ==============
 vendor.debug.factory.idle_state    u:object_r:vendor_factory_idle_state_prop:s0
 
@@ -753,6 +754,8 @@ ro.vendor.mtk_zsdhdr_support  u:object_r:mtk_camera_prop:s0
 ro.vendor.mtk_cam_lomo_support  u:object_r:mtk_camera_prop:s0
 vendor.vdo.cam.effect  u:object_r:mtk_camera_prop:s0
 vendor.mtk.client.appmode u:object_r:mtk_camera_prop:s0
+ro.mtk_cam_dualzoom_support u:object_r:mtk_camera_prop:s0
+ro.mtk_cam_stereo_camera_support u:object_r:mtk_camera_prop:s0
 
 #=============MTK gallery property===========
 vendor.debug.gallery.loglevel  u:object_r:mtk_gallery_prop:s0

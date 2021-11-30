@@ -272,3 +272,5 @@ get_prop(platform_app,mtk_em_video_log_sf_postbuffer_prop)
 
 allow platform_app debugfs_ion:dir search;
 allow platform_app system_app_data_file:dir getattr;
+
+get_prop(platform_app, vendor_debug_prop)
