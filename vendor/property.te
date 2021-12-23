@@ -672,3 +672,6 @@ system_public_prop(vendor_mtk_nwk_opt_prop)
 
 # SMS
 vendor_public_prop(sms_md_ready_prop)
+
+# gpud property
+system_public_prop(debug_mtk_gpud_prop)
