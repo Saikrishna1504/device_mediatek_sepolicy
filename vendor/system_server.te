@@ -474,3 +474,5 @@ allow system_server mtk_radio_service:service_manager find;
 
 # Purpose: ViLTE allow to use HiDL fd
 allow system_server vendor_framework_file:file r_file_perms;
+
+get_prop(system_server, vendor_debug_prop)
