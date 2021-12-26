@@ -408,3 +408,5 @@ allow mtk_hal_camera mtk_hal_pq_hwservice:hwservice_manager find;
 
 get_prop(mtk_hal_camera, vendor_debug_prop)
 get_prop(mtk_hal_camera, mtk_emcamera_prop)
+get_prop(mtk_hal_camera, mtk_pq_prop)
+get_prop(mtk_hal_camera, mtk_pq_ro_prop)
