@@ -107,3 +107,5 @@ allow mnld gps_emi_device:chr_file rw_file_perms;
 
 get_prop(mnld, wmt_prop)
 get_prop(mnld, mtk_default_prop)
+get_prop(mnld, service_nvram_init_prop)
+get_prop(mnld, mtk_gps_support_prop)
