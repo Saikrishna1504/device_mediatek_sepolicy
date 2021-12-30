@@ -598,6 +598,7 @@ ro.vendor.md_auto_setup_ims u:object_r:mtk_ims_prop:s0
 ro.vendor.md_mims_support u:object_r:mtk_ims_prop:s0
 persist.vendor.ims_support u:object_r:mtk_ims_prop:s0
 ro.vendor.mtk_imsi_switch_support u:object_r:mtk_ims_prop:s0
+ro.vendor.mtk_ims_notification u:object_r:mtk_ims_prop:s0
 
 #=============allow ims config property===========
 vendor.ril.imsconfig.force.notify u:object_r:vendor_imsconfig_prop:s0
