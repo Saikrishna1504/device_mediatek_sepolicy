@@ -170,3 +170,6 @@ get_prop(rild, mtk_smsformat_prop)
 get_prop(rild, mtk_network_prop)
 get_prop(rild, mtk_simswitch_emmode_prop)
 get_prop(rild, mtk_default_prop)
+
+# MTK Engineering Mode
+allow rild platform_app:binder { call transfer };
