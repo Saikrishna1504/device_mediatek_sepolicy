@@ -34,3 +34,5 @@ allow vpud_native sysfs_boot_mode:file rw_file_perms;
 get_prop(vpud_native, ro_mtk_aee_prop)
 get_prop(vpud_native, ro_vendor_mtk_microtrust_tee_prop)
 get_prop(vpud_native, ro_vendor_mtk_trustonic_tee_prop)
+get_prop(vpud_native, mtk_default_prop)
+get_prop(vpud_native, vendor_debug_prop)

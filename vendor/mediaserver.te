@@ -362,3 +362,5 @@ allow mediaserver custom_file:file {read getattr};
 
 # Purpose : Use aee API
 allow mediaserver aee_aed:unix_stream_socket connectto;
+
+get_prop(mediaserver, vendor_debug_prop)
