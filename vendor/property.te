@@ -445,7 +445,7 @@ vendor_public_prop(vendor_vt_prop)
 system_public_prop(mtk_update_prop)
 
 #=============allow system_server to set media.wfd.*==============
-system_public_prop(media_wfd_prop)
+system_public_prop(vendor_media_wfd_prop)
 
 #=============allow telephony modules to set mtk_vsim_prop==============
 system_public_prop(mtk_vsim_prop)

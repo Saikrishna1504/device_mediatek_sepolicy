@@ -324,7 +324,7 @@ allow mediaserver system_app_data_file:file { read getattr };
 set_prop(mediaserver,system_prop)
 
 # Purpose: Allow ioctl and property operations
-get_prop(mediaserver, media_wfd_prop)
+get_prop(mediaserver, vendor_media_wfd_prop)
 allowxperm mediaserver proc_perfmgr:file ioctl {
   PERFMGR_FPSGO_QUEUE
   PERFMGR_FPSGO_DEQUEUE
@@ -355,7 +355,7 @@ allow mediaserver MJC_device:chr_file { read write ioctl open };
 allow mediaserver audio_ipi_device:chr_file { read write ioctl open };
 
 # Purpose : WFD and MET Latency measurement
-allow mediaserver media_wfd_prop:property_service set;
+allow mediaserver vendor_media_wfd_prop:property_service set;
 
 # Purpose : Play tone for alert
 allow mediaserver custom_file:file {read getattr};
