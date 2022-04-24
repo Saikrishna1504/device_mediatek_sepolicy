@@ -1,0 +1,2 @@
+allow hal_displayfeature_default fwk_sensor_hwservice:hwservice_manager find;
+allow hal_displayfeature_default system_server:binder { call transfer };
