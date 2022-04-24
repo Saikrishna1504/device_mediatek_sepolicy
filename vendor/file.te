@@ -514,6 +514,3 @@ type sysfs_fpsgo, fs_type, sysfs_type;
 
 # sysfs xgf
 type sysfs_xgf, fs_type, sysfs_type;
-
-# kmset exec
-type bp_kmsetkey_ca_exec, exec_type, vendor_file_type, file_type;
