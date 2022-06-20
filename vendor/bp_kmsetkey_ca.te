@@ -9,3 +9,8 @@ allow bp_kmsetkey_ca teei_client_device:chr_file rw_file_perms;
 hal_client_domain(bp_kmsetkey_ca, hal_keymaster)
 
 init_daemon_domain(bp_kmsetkey_ca)
+
+allow bp_kmsetkey_ca property_socket:sock_file write;
+allow bp_kmsetkey_ca init:unix_stream_socket connectto;
+
+set_prop(bp_kmsetkey_ca, soter_teei_prop)
