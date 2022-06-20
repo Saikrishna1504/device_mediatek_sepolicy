@@ -106,6 +106,7 @@ allow ccci_mdinit mnt_vendor_file:dir search;
 # Purpose : Allow ccci_mdinit call sysenv_get and sysenv_set
 allow ccci_mdinit block_device:dir search;
 allow ccci_mdinit metadata_file:dir search;
+allow ccci_mdinit gsi_metadata_file:dir search;
 allow ccci_mdinit proc_cmdline:file r_file_perms;
 allow ccci_mdinit sysfs_dt_firmware_android:dir { open read search };
 allow ccci_mdinit sysfs_dt_firmware_android:file { getattr open read };
@@ -116,3 +117,6 @@ typeattribute ccci_mdinit mtkimsapdomain;
 
 get_prop(ccci_mdinit, service_nvram_init_prop)
 get_prop(ccci_mdinit, mtk_cxp_vendor_prop)
+
+# Neverallow: vendor domains may only access dirs in /data/vendor, never core_data_file_types
+dontaudit ccci_mdinit mdlog_data_file:dir search;

@@ -70,3 +70,7 @@ allow ccci_fsd sysfs_mmcblk:file { read getattr open };
 allow ccci_fsd kernel:system module_request;
 
 get_prop(ccci_fsd, mtk_md_prop)
+
+# Purpose: Allow to get few sections of sysfs and procfs
+allow ccci_fsd proc_version:file { read open getattr };
+allow ccci_fsd sysfs_devices_block:dir search;
