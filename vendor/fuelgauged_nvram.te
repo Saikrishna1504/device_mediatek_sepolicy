@@ -42,5 +42,6 @@ allow fuelgauged_nvram sysfs_boot_mode:file { open read };
 
 # Purpose: Allow to search metadata files
 allow fuelgauged_nvram metadata_file:dir search;
+allow fuelgauged_nvram gsi_metadata_file:dir search;
 
 get_prop(fuelgauged_nvram, service_nvram_init_prop)
