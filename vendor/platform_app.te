@@ -273,6 +273,9 @@ allow platform_app system_app_data_file:dir getattr;
 
 get_prop(platform_app, vendor_debug_prop)
 
+# Purpose: Allow platform apps to get emergency callback mode property
+get_prop(platform_app, vendor_radio_cdma_ecm_prop)
+
 # MTK Engineering Mode
 allow platform_app rild:binder { call transfer };
 allow platform_app em_hidl:binder { call transfer };

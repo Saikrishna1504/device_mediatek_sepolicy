@@ -916,5 +916,8 @@ persist.vendor.gsm. u:object_r:vendor_mtk_nwk_opt_prop:s0
 # SMS
 vendor.sms.md.ready         u:object_r:sms_md_ready_prop:s0
 
+# Emergency callback mode
+ril.cdma.inecmmode          u:object_r:vendor_radio_cdma_ecm_prop:s0
+
 # gpud Property
 vendor.debug.gpud. u:object_r:debug_mtk_gpud_prop:s0
