@@ -1,3 +1,6 @@
+# Purpose: For access data folders
+typeattribute bootanim mlstrustedsubject;
+
 # Purpose : for opetator
 allow bootanim bootani_prop:property_service set;
 
