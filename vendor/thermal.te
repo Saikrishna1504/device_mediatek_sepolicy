@@ -27,3 +27,6 @@ set_prop(thermal ,mtk_thermal_config_prop)
 allow thermal thermal_manager_data_file:file rw_file_perms;
 allow thermal thermalloadalgod:unix_stream_socket connectto;
 allow thermal proc_mtkcooler:dir search;
+
+# Purpose: Allow thermals to get tel switch property
+get_prop(thermal, tel_switch_prop)
