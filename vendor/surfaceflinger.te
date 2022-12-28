@@ -173,3 +173,4 @@ allow surfaceflinger proc_ged:file {open read write ioctl getattr};
 get_prop(surfaceflinger, mtk_pq_ro_prop)
 get_prop(surfaceflinger, mtk_pq_prop)
 get_prop(surfaceflinger, vendor_debug_prop)
+get_prop(surfaceflinger, debug_mtk_gpud_prop)

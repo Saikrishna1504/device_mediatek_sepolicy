@@ -364,3 +364,4 @@ allow mediaserver custom_file:file {read getattr};
 allow mediaserver aee_aed:unix_stream_socket connectto;
 
 get_prop(mediaserver, vendor_debug_prop)
+get_prop(mediaserver, debug_mtk_gpud_prop)

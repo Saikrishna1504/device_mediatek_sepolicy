@@ -479,3 +479,5 @@ allow system_server vendor_framework_file:file r_file_perms;
 get_prop(system_server, vendor_debug_prop)
 
 allow system_server hal_displayfeature_default:binder { call transfer };
+
+get_prop(system_server, debug_mtk_gpud_prop)

@@ -61,3 +61,4 @@ hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
 get_prop(hal_graphics_composer_default, vendor_debug_prop)
 get_prop(hal_graphics_composer_default, mtk_pq_ro_prop)
 get_prop(hal_graphics_composer_default, mtk_pq_prop)
+get_prop(hal_graphics_composer_default, debug_mtk_gpud_prop)
