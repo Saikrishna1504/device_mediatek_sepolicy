@@ -60,3 +60,5 @@ get_prop(mtk_hal_mms, render_prop)
 
 # Boot Mode
 allow mtk_hal_mms sysfs_boot_mode:file r_file_perms;
+
+get_prop(mtk_hal_mms, mtk_pq_prop)

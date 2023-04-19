@@ -298,3 +298,4 @@ allow system_app update_engine:binder { call transfer };
 allow system_app fm_device:chr_file rw_file_perms;
 
 get_prop(system_app, vendor_debug_prop)
+get_prop(system_app, debug_mtk_gpud_prop)
