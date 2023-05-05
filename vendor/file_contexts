@@ -1296,3 +1296,9 @@
 
 # kmset exec
 /(system\/vendor|vendor)/bin/bp_kmsetkey_ca                                                     u:object_r:bp_kmsetkey_ca_exec:s0
+
+# Memtrack
+/(vendor|system/vendor)/bin/hw/android\.hardware\.memtrack-service\.mediatek-mali         u:object_r:hal_memtrack_default_exec:s0
+/sys/devices/platform/[0-9].+mali/dma_buf_gpu_mem                                         u:object_r:sysfs_gpu:s0
+/sys/devices/platform/[0-9].+mali/kprcs                                                   u:object_r:sysfs_gpu:s0
+/sys/devices/platform/[0-9].+mali/total_gpu_mem                                           u:object_r:sysfs_gpu:s0
