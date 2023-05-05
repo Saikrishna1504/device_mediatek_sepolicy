@@ -116,6 +116,7 @@ genfscon sysfs /power/vcorefs/opp_table    u:object_r:sysfs_vcore_debug:s0
 # Purpose : MTK Vibrator
 genfscon sysfs /devices/platform/odm/odm:vibrator@0/leds/vibrator u:object_r:sysfs_vibrator:s0
 genfscon sysfs /devices/platform/leds-mt65xx/leds u:object_r:sysfs_leds:s0
+genfscon sysfs /kernel/thunderquake_engine    u:object_r:sysfs_vibrator:s0
 
 # Purpose : mtk EM Power debug_log setting
 genfscon sysfs /devices/platform/spm u:object_r:sysfs_spm:s0
@@ -299,3 +300,4 @@ genfscon proc /ion/clients/clients_summary u:object_r:proc_ion_clients_summary:s
 
 # Purpose : idletime timer
 genfscon proc /displowpower/idletime    u:object_r:proc_idletime:s0
+
