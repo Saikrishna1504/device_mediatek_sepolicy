@@ -92,6 +92,7 @@ set_prop(vendor_init, mtk_wifi_hotspot_prop)
 set_prop(vendor_init, persist_aeev_prop)
 
 set_prop(vendor_init, mtk_powerhal_prop)
+set_prop(vendor_init, vendor_power_prop)
 
 allow vendor_init vendor_mtk_radio_prop:property_service set;
 allow vendor_init mtk_ims_prop:property_service set;

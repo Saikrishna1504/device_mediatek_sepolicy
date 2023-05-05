@@ -303,6 +303,7 @@ vendor_public_prop(mtk_bt_sap_enable_prop)
 
 #=============MTK powerhal property================
 vendor_public_prop(mtk_powerhal_prop)
+vendor_internal_prop(vendor_power_prop)
 
 #=============MTK Wifi wlan_assistant property=============
 vendor_public_prop(mtk_nvram_ready_prop)
