@@ -141,9 +141,6 @@ binder_call(system_server, mtk_hal_wifi)
 #           u:object_r:persist_mtk_aee_prop:s0 tclass=file permissive=0
 get_prop(system_server, persist_mtk_aee_prop);
 
-# Purpose : support power-off alarm
-allow system_server alarm_device:chr_file rw_file_perms;
-
 # Purpose : Allow system_server to use ioctl/ioctlcmd
 allow system_server proc_ged:file rw_file_perms;
 allowxperm system_server proc_ged:file ioctl { proc_ged_ioctls };

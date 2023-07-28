@@ -14,3 +14,5 @@ user=_app seinfo=platform name=com.mediatek.emcamera domain=emcamera_app type=ap
 
 # This is for sensorhub apk to commnucate with hal
 user=_app seinfo=platform name=com.mediatek.sensorhub.ui domain=sensorhub_app type=app_data_file levelFrom=user
+
+user=system isPrivApp=true seinfo=platform name=com.qualcomm.qti.poweroffalarm type=system_app_data_file domain=power_off_alarm levelFrom=user
