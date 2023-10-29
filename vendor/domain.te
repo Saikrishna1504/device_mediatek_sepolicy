@@ -8,7 +8,7 @@ allow domain debugfs_binder:dir search;
 # as it is a public interface for all processes to read some OTP data.
 allow {
   domain
-  -isolated_app
+  -isolated_app_all
 } sysfs_devinfo:file r_file_perms;
 
 # Purpose: allow trusted process to connect aee daemon
@@ -20,7 +20,7 @@ allow { domain -coredomain -hal_configstore_server -vendor_init } aee_aedv:fd us
 allow domain exm0_device:chr_file rw_file_perms;
 
 # Purpose : for device bring up, not to block early migration
-allow { domain -isolated_app } storage_file:dir search;
+allow { domain -isolated_app_all } storage_file:dir search;
 
 # Purpose : for aee dump systemAPI db, get backtrace
 allow domain aee_aedv:process sigchld;

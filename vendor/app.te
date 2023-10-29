@@ -16,7 +16,7 @@ allowxperm appdomain proc_perfmgr:file ioctl {
 };
 
 # Purpose : For platform app com.android.gallery3d
-allow { appdomain -isolated_app } radio_data_file:file rw_file_perms;
+allow { appdomain -isolated_app_all } radio_data_file:file rw_file_perms;
 
 # Purpose : For app com.tencent.qqpimsecure
 allowxperm appdomain appdomain:fifo_file ioctl SNDCTL_TMR_START;
