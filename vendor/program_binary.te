@@ -7,7 +7,7 @@ init_daemon_domain(program_binary)
 # Purpose : Cache program binaries for HWUI usage.
 binder_service(program_binary)
 binder_use(program_binary)
-binder_call({domain -init -netd -installd -iorapd -vndservicemanager -vold -vendor_init}, program_binary)
+binder_call({domain -init -netd -installd -vndservicemanager -vold -vendor_init}, program_binary)
 
 # Purpose : To manipulate GPU.
 allow program_binary gpu_device:chr_file { open read write ioctl };
