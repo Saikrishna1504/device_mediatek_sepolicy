@@ -188,9 +188,6 @@ type adbd_data_file, file_type, data_file_type, core_data_file_type;
 # autokd data file
 type autokd_data_file, file_type, data_file_type;
 
-# fuse
-type fuseblk,sdcard_type,fs_type,mlstrustedobject;
-
 # for mt-ramdump reset
 type proc_mrdump_rst, fs_type, proc_type;
 
