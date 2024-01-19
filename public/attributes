@@ -21,3 +21,8 @@ attribute mtk_hal_dmc_server;
 attribute mtk_hal_apm;
 attribute mtk_hal_apm_client;
 attribute mtk_hal_apm_server;
+
+# Dolby
+attribute hal_dms;
+attribute hal_dms_client;
+attribute hal_dms_server;
