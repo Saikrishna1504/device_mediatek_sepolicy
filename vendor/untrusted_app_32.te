@@ -1,0 +1,4 @@
+allow untrusted_app_32 debugfs_trace_marker:file { getattr };
+allow untrusted_app_32 pmsg_device:chr_file { getattr };
+dontaudit untrusted_app_32 selinuxfs:file { read };
+allow untrusted_app_32 zygote:unix_stream_socket { getattr };
