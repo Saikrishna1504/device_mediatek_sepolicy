@@ -52,7 +52,6 @@ allow drmserver storage_file:lnk_file read;
 
 # Purpose : Allow drmserver to access some system_server opreration on M
 #           and allow drmserver access file stored in sdcard
-use_drmservice(system_server)
 allow drmserver system_server:file getattr;
 allow system_server drmserver:drmservice openDecryptSession;
 allow drmserver nvram_agent_service:service_manager find;
@@ -153,7 +152,6 @@ allow drmserver storage_file:lnk_file read;
 
 # Purpose : Allow drmserver to access some system_server opreration on M
 #           and allow drmserver access file stored in sdcard
-use_drmservice(system_server)
 allow drmserver system_server:file getattr;
 allow system_server drmserver:drmservice openDecryptSession;
 allow drmserver nvram_agent_service:service_manager find;
