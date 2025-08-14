@@ -539,6 +539,7 @@
 /(system\/vendor|vendor)/bin/mnld u:object_r:mnld_exec:s0
 /(system\/vendor|vendor)/bin/biosensord_nvram u:object_r:biosensord_nvram_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-mediatek u:object_r:mtk_hal_bluetooth_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth-service\.mediatek               u:object_r:mtk_hal_bluetooth_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.gnss@2\.0-service-mediatek u:object_r:mtk_hal_gnss_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.gnss@2\.1-service-mediatek u:object_r:mtk_hal_gnss_exec:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.audio@4\.0-service-mediatek u:object_r:mtk_hal_audio_exec:s0
